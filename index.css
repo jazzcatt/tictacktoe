@@ -1,0 +1,77 @@
+html,body{height: 100%;}
+body{	
+	background-image: url('img/fon.jpg');
+	 min-width: 280px;
+	 max-width: 1920px;
+	 min-height: 420px;
+	 max-height: 1600px;
+
+}
+.cross{
+	background: url('img/x.png') no-repeat;
+	opacity: 0.9;
+	background-size: 100%;
+
+}
+.zero{
+	background: url('img/0.png') no-repeat;
+	opacity: 0.9;
+	background-size: 100%;
+}
+
+#container span{
+
+	border:solid 0.2em;
+	display: inline-block;
+	width: 25%;
+    height: 30%;
+    background-position: center;
+    border: 3px dashed;
+    border-color: #006699;
+}
+
+#container{
+
+	height: 80%;
+	width: 50%;
+	margin: 0 auto;
+	overflow-x: visible;
+    overflow-y: visible;
+}
+
+#scoreBoard{
+	
+    height: 20%;
+    margin: 0 auto;
+	font-size: 4em;
+	text-align: center;
+}
+
+#userName:hover{
+	background-color: #6699FF;
+	cursor: pointer;
+	border-radius: 13em/3em;
+
+}
+.comp{
+	color:#CC3333;
+}
+
+.user{
+	color:#0066CC;
+}
+
+#title{
+	
+	font-size: 0.2em;
+	text-align: center;
+	margin-right: 35%;
+	margin-bottom:0;
+}
+#soundLabel{
+	float:right;
+	width: 10%;
+}
+#soundLabel:hover{
+	cursor: pointer;
+}
