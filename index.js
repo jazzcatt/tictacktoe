@@ -1,3 +1,4 @@
+'use strict'
 /**
  *Creates an instance of game
  *
@@ -77,33 +78,41 @@ function checkWin(){
 
 /**
 *Determines where will be strike from computer side 
+*   !! combinations seek individual cycles, no one !! 
 */
 function artIntell(){
 	var zero, cross;
-	var emptycell = 0;
+	var emptycell;
 	for(var i = 0; i<matrix.length; i++){
 		zero = 0;
-		cross = 0;
 		emptycell=0;
 		for(var j = 0;  j<matrix[i].length; j++){
 			if(matrix[i][j].classList.contains('zero')){
 				zero++;
 				
-			}else if(matrix[i][j].classList.contains('cross')) {
-				cross++;
-				
 			}else if(!matrix[i][j].classList.contains('zero') && !matrix[i][j].classList.contains('cross')){
 				emptycell++;
-
 			}
-
 			if(zero == 2 && emptycell > 0){
 				compPass(matrix[i]);
 				return;
-			}else if(cross == 2 && emptycell > 0) {
+			}
+		}
+	}
+
+	for(var i = 0; i<matrix.length; i++) {
+		cross = 0;
+		emptycell = 0;
+		for(var j = 0; j<matrix[i].length; j++) {
+			if(matrix[i][j].classList.contains('cross')){
+				cross++;
+			}else if(!matrix[i][j].classList.contains('zero') && !matrix[i][j].classList.contains('cross')){
+				emptycell++;
+			}  
+			if(cross == 2 && emptycell > 0) {
 				compPass(matrix[i]);
 				return;
-			}
+			}			
 		}
 	}
 	if(!cellOccupied(field[4])) {
